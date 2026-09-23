@@ -1,0 +1,12 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Bloqueia acesso direto a arquivos sensíveis se tentado via url (embora api já seja a pasta base)
+    RewriteRule ^config/ - [F]
+    RewriteRule ^utils/ - [F]
+    RewriteRule ^controllers/ - [F]
+
+    # Pode-se implementar reescrita de rotas genéricas aqui se necessário futuramente
+</IfModule>
